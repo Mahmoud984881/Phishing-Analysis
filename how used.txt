@@ -1,0 +1,30 @@
+The SUPER PHISHING EMAIL ANALYZER v3.1 is a tool designed to analyze suspicious emails for phishing indicators. Here's what it does:
+
+Core Functions:
+Extracts Key Indicators:
+
+IP Addresses: Identifies sender/server IPs (e.g., 45.156.231.138).
+
+URLs: Detects obfuscated links (e.g., hxxps://amazon[.]zzyuchengzhika[.]cn), decoding them to reveal malicious destinations.
+
+Headers: Parses metadata like From, To, Subject, and authentication headers (SPF, DKIM, DMARC).
+
+Authentication Checks:
+
+Validates email legitimacy using SPF (sender IP verification), DKIM (signature checks), and DMARC (domain alignment). Flags spoofed emails (e.g., "Potentially Spoofed").
+
+Attachment Analysis:
+
+If the email contains attachments, the tool extracts cryptographic hashes (e.g., MD5, SHA-256) of the files. These hashes can be used to check malware databases for known threats.
+
+Example Scenario:
+In the provided email analysis:
+
+IPs like 45.156.231.138 and URLs masked with [,] or hxxps were flagged.
+
+Headers revealed a spoofed "From" address (amazon@zyevantoby.cn) and failed DMARC alignment.
+
+No attachments were found, but if present, the tool would list their hashes (e.g., SHA-256: a1b2c3...).
+
+To use the tool put the email file in the same directory and use this line:
+./dist/phishing_analyzer
